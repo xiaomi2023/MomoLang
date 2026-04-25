@@ -1,4 +1,9 @@
-# 🐱 MomoLang
+<h1 align="center">🐱 MomoLang</h1>
+
+<p align="center">
+  <a href="README.md">🇨🇳 中文</a> · 
+  <a href="README_EN.md">🇬🇧 English</a>
+</p>
 
 > **MomoLang** 是由[Momoka](https://github.com/xiaomi2023/Momoka)自主开发的一个面向对象的编译型编程语言。
 
@@ -70,7 +75,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-username/momolang.git
+git clone https://github.com/xiaomi2023/MomoLang
 cd momolang
 
 # 无需额外安装依赖，Python 和 Node.js 标准库即可运行
@@ -78,9 +83,12 @@ cd momolang
 
 ### 使用方式
 
-#### 方式一：编译 + VM 运行（完整工具链）
+#### 方式一：编译并运行（完整工具链）
 
 ```bash
+# 编译 .mm 源文件为 .mmb 字节码
+node momolang.js compile examples/hello.mm
+
 # 使用 MomoVM (Node.js) 运行字节码
 node momolang.js run build/hello.mmb
 
@@ -92,6 +100,8 @@ node momolang.js build-run examples/hello.mm
 
 ```bash
 node momolang.js run <file.mmb>                         # 运行字节码
+node momolang.js compile <file.mm> [-o output.mmb]      # 编译 .mm 为 .mmb
+node momolang.js build-run <file.mm>                    # 编译并运行
 node momolang.js disasm <file.mmb>                      # 反汇编查看字节码
 ```
 
